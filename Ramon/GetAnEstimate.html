@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Ramon the painter, premier exterior home painting with reasonable pricing. All jobs can be done with satisfaction guaranteed"\
+    <meta name="keywords" content="Ramon the Painter, premier exterior, reasonable pricing, satisfaction guaranteed, painters in my area, DFW painting, texture painting, contractor, Renovation  "
+    <meta name="author" content="Alek Caro">
+    <title>Ramon The Painter  |  Get An Estimate </title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+      function myFunction(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            document.getElementById("my-demo").innerHTML = "Email Sent!";
+          }
+      };
+      var formName = "\""+ document.getElementById("formName").value + "\""
+      var emailRequestor = "\""+ document.getElementById("emailRequestor").value + "\""
+      var emailBody = "\""+ document.getElementById("emailBody").value + "\""
+      var emailSubject = "\""+ document.getElementById("emailSubject").value + "\""
+
+
+
+      xhttp.open("POST", " https://yell7mpp0i.execute-api.us-east-2.amazonaws.com/dev/sendmessage");
+      xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhttp.send("{\"formName\": "+ formName + ",\"emailBody\": "+ emailBody + ",\"emailRequestor\":  "+ emailRequestor + ",\"emailSubject\":  "+ emailSubject + "}");
+      }
+  </script>
+  </head>
+  <body>
+    <header id="header-background">
+        <div class="container">
+          <div id="branding">
+            <h1><span class="highlight"> Ramon</span> the Painter</h1>
+
+            <nav>
+                <ul>
+                  <li > <a href="index.html">Home</a></li>
+                  <li> <a href="about.html">About Us</a></li>
+                  <li > <a href="portfolio.html">Portfolio</a></li>
+                  <li class = "current"> <a href="GetAnEstimate.html">Get An Estimate</a></li>
+                </ul>
+            </nav>
+              <img src="./img/logo.png">
+
+            <div id = "ContactInformation">
+
+              <p>  Phone Number: (214) 679-4513 </p>
+              <p>  Email: Ramonthepainter@yahoo.com </p>
+            </div>
+
+          </div>
+
+  </header>
+
+
+    <section id= "main">
+	      <div class=”container”>
+
+        </div>
+    </section>
+     <section id=”GetAnEstimate”>
+	     <div class=”container”>
+	        <h1> Submit an Estimate! </h1>
+
+
+
+
+          <div aign = "center">
+            <br>
+
+            <h1><span id="my-demo"> Ramon the Painter - Get an Estimate </span></h1>
+            <b> Name: </b> <input styles="" types="text" id="formName" /><br>
+            <b> Phone Number: </b> <input styles="" types="text" id="emailRequestor" /><br>
+            <b> Email: </b> <input styles="" types="text" id="emailBody" /><br>
+            <b> Description: </b> <input styles="" types="text" id="emailSubject" /><br>
+            <button onclick="myFunction()">Submit message </button>
+
+
+
+ </section>
+
+  </body>
+
+
+
+
+      <footer>
+        <p> Ramon the Painter, Copyright &copy; 2020 </p>
+      </footer>
+
+
+</html>
